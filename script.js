@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const x = e.clientX - rect.left - rect.width / 2;
             const y = e.clientY - rect.top - rect.height / 2;
             btn.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
-            if (cursorDot) cursorDot.style.transform = 'translate(-50%, -50%) scale(2)';
+            if (cursorDot) cursorDot.style.transform = 'translate(-50%, -50%) scale(1.3)';
         });
         btn.addEventListener('mouseleave', () => {
             btn.style.transform = 'translate(0, 0)';
@@ -131,28 +131,37 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.addEventListener('mousedown', (e) => {
         body.classList.add('cursor-click');
-        for (let i = 0; i < 10; i++) createBurst(e.clientX, e.clientY);
+        // Tạo pháo hoa khi click
+        const colors = ['#FF6B6B', '#FFD93D', '#6BCB77', '#4D96FF', '#F473B9', '#FFFFFF'];
+        for (let i = 0; i < 25; i++) {
+            const color = colors[Math.floor(Math.random() * colors.length)];
+            createBurst(e.clientX, e.clientY, color);
+        }
     });
     window.addEventListener('mouseup', () => body.classList.remove('cursor-click'));
 
-    function createBurst(x, y) {
+    function createBurst(x, y, color) {
         const p = document.createElement('div');
         p.className = 'burst-particle';
         body.appendChild(p);
 
         const angle = Math.random() * Math.PI * 2;
-        const velocity = Math.random() * 100 + 50;
+        const velocity = Math.random() * 120 + 60;
         const tx = Math.cos(angle) * velocity;
         const ty = Math.sin(angle) * velocity;
+        const size = Math.random() * 6 + 2;
 
         p.style.left = `${x}px`;
         p.style.top = `${y}px`;
-        p.style.background = Math.random() > 0.5 ? 'var(--accent)' : 'var(--c2)';
+        p.style.width = `${size}px`;
+        p.style.height = `${size}px`;
+        p.style.background = color || (Math.random() > 0.5 ? 'var(--accent)' : 'var(--c2)');
+        p.style.boxShadow = `0 0 10px ${p.style.background}`;
 
         p.animate([
             { transform: 'translate(-50%, -50%) scale(1)', opacity: 1 },
             { transform: `translate(calc(-50% + ${tx}px), calc(-50% + ${ty}px)) scale(0)`, opacity: 0 }
-        ], { duration: 1000, easing: 'cubic-bezier(0, .9, .57, 1)' }).onfinish = () => p.remove();
+        ], { duration: Math.random() * 500 + 800, easing: 'cubic-bezier(0.1, 0.9, 0.2, 1)' }).onfinish = () => p.remove();
     }
 
     // ── NAVBAR SCROLL ──
@@ -378,29 +387,9 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(el);
     });
 
-    // ── MODAL LOGIC ──
-    const modal = document.getElementById('registerModal');
-    const modalFormBody = document.getElementById('modalFormBody');
-    const modalSuccessBody = document.getElementById('modalSuccessBody');
-
-    window.openModal = () => {
-        modal.style.display = 'flex';
-        setTimeout(() => modal.classList.add('active'), 10);
-        document.body.style.overflow = 'hidden';
-        modalFormBody.style.display = 'block';
-        modalSuccessBody.classList.remove('visible');
-    };
-
-    window.closeModal = () => {
-        modal.classList.remove('active');
-        setTimeout(() => modal.style.display = 'none', 300);
-        document.body.style.overflow = '';
-    };
-
-    // Close modal on outside click
-    modal?.addEventListener('click', (e) => {
-        if (e.target === modal) closeModal();
-    });
+    // ── REGISTRATION FORM LOGIC ──
+    const regFormBody = document.getElementById('regFormBody');
+    const regSuccessBody = document.getElementById('regSuccessBody');
 
     // ── FORMS SUBMISSION & VALIDATION ──
     const forms = ['advisorForm', 'experienceForm'];
@@ -441,9 +430,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
             setTimeout(() => {
                 if (id === 'advisorForm') {
-                    modalFormBody.style.display = 'none';
-                    modalSuccessBody.classList.add('visible');
+                    if (regFormBody) regFormBody.style.display = 'none';
+                    if (regSuccessBody) regSuccessBody.classList.add('visible');
                     form.reset();
+                    // Cuộn lên đầu section đăng ký để thấy thông báo
+                    document.getElementById('registration')?.scrollIntoView({ behavior: 'smooth' });
                 } else {
                     // Only show success message and reset form
 
