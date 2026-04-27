@@ -38,7 +38,7 @@
                 <li><a href="#database"><i class="fas fa-book"></i> Kho Môn Học</a></li>
                 <li><a href="#event"><i class="fas fa-fire"></i> Hot Event</a></li>
                 <li><a href="#feedback"><i class="fas fa-comments"></i> Chia sẻ</a></li>
-                <li class="nav-cta-item"><a href="javascript:void(0)" onclick="openModal()" class="nav-cta-desktop">Tư
+                <li class="nav-cta-item"><a href="#registration" class="nav-cta-desktop">Tư
                         Vấn</a></li>
             </ul>
 
@@ -51,34 +51,33 @@
     </nav>
 
     <header id="home" class="hero section-reveal">
-        <div class="container hero-centered-content">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <div class="hero-main-title fade-up delay-1">
+                    <h1><span>ULIS ELECTIVE</span> <br>COMPASS</h1>
+                </div>
+
+                <div class="hero-sub-box fade-up delay-2">
+                    <p class="hero-subheadline hero-subheadline-top">
+                        Học điều bạn mạnh, chọn môn bạn mê.
+                    </p>
+                    <p class="hero-subheadline">
+                        Nền tảng tra cứu và đánh giá môn học tự chọn dành riêng cho sinh viên ULIS.
+                        Cung cấp thông tin chính thống và trải nghiệm thực tế từ cộng đồng.
+                    </p>
+                    <div class="hero-btns">
+                        <a href="#database" class="btn btn-primary-rounded magnetic-btn">
+                            <i class="fas fa-search"></i> Tìm kiếm
+                        </a>
+                        <a href="#why-video" class="btn btn-white-rounded magnetic-btn">
+                            <i class="fas fa-play-circle"></i> Xem video
+                        </a>
+                    </div>
+                </div>
+            </div>
+
             <div class="hero-brand-logo fade-up">
                 <img src="logonhomkhongnen.png" alt="ULIS Big Logo" class="hero-top-logo">
-            </div>
-            <div class="hero-top-info fade-up">
-                <p class="university-name">ĐẠI HỌC NGOẠI NGỮ - ĐẠI HỌC QUỐC GIA HÀ NỘI</p>
-            </div>
-
-            <div class="hero-main-title fade-up delay-1">
-                <h1>ULIS ELECTIVE COMPASS</h1>
-            </div>
-
-            <div class="hero-sub-box fade-up delay-2">
-                <p class="hero-subheadline hero-subheadline-top">
-                    Học điều bạn mạnh, chọn môn bạn mê.
-                </p>
-                <p class="hero-subheadline">
-                    Nền tảng tra cứu và đánh giá môn học tự chọn dành riêng cho sinh viên ULIS.
-                    Cung cấp thông tin chính thống và trải nghiệm thực tế từ cộng đồng.
-                </p>
-                <div class="hero-btns">
-                    <a href="#database" class="btn btn-primary-rounded magnetic-btn">
-                        <span class="btn-icon">🔍</span> Tìm kiếm môn học
-                    </a>
-                    <a href="#why-video" class="btn btn-white-rounded magnetic-btn">
-                        <span class="btn-icon">🎬</span> Xem video giới thiệu
-                    </a>
-                </div>
             </div>
         </div>
     </header>
@@ -252,67 +251,71 @@
         </div>
     </section>
 
+    <section id="registration" class="section">
+        <div class="container section-reveal">
+            <div class="registration-box fade-up">
+                <div id="regFormBody">
+                    <div class="section-title">
+                        <h2>Đăng ký Tư vấn</h2>
+                        <p>Để lại thông tin để được hỗ trợ lộ trình học tập tối ưu nhất và nhận file đề cương ngắn gọn
+                            các môn học tự chọn trong học kỳ này.</p>
+                    </div>
+                    <form id="advisorForm" class="registration-form">
+                        <div class="form-row">
+                            <div class="input-group">
+                                <label for="a-name">Họ và tên</label>
+                                <input type="text" id="a-name" placeholder="VD: Nguyễn Văn A" required
+                                    spellcheck="false">
+                            </div>
+                            <div class="input-group">
+                                <label for="a-phone">Số điện thoại</label>
+                                <input type="tel" id="a-phone" placeholder="VD: 0912 xxx xxx" required
+                                    spellcheck="false">
+                            </div>
+                        </div>
 
-    <!-- ── MODAL ĐĂNG KÝ ── -->
-    <div class="modal-overlay" id="registerModal">
-        <div class="modal-content">
-            <button class="btn-close-modal" onclick="closeModal()">&times;</button>
-            <div id="modalFormBody">
-                <h2>Đăng ký Tư vấn</h2>
-                <p>Để lại thông tin để được hỗ trợ lộ trình học tập tối ưu nhất và nhận file đề cương ngắn gọn các môn
-                    học tự chọn trong học kỳ này.</p>
-                <form id="advisorForm" class="modal-form">
-                    <div class="form-row">
                         <div class="input-group">
-                            <label for="a-name">Họ và tên</label>
-                            <input type="text" id="a-name" placeholder="VD: Nguyễn Văn A" required spellcheck="false">
+                            <label for="a-email">Email</label>
+                            <input type="email" id="a-email" placeholder="example@ulis.vnu.edu.vn" required
+                                spellcheck="false">
                         </div>
+
                         <div class="input-group">
-                            <label for="a-phone">Số điện thoại</label>
-                            <input type="tel" id="a-phone" placeholder="VD: 0912 xxx xxx" required spellcheck="false">
+                            <label for="a-dept">Chọn Khoa của bạn</label>
+                            <select id="a-dept" required>
+                                <option value="" disabled selected>Khoa của bạn...</option>
+                                <option>Khoa Ngôn ngữ và Văn hóa Anh</option>
+                                <option>Khoa Ngôn ngữ và Văn hóa Trung</option>
+                                <option>Khoa Ngôn ngữ và Văn hóa Nhật</option>
+                                <option>Khoa Ngôn ngữ và Văn hóa Pháp</option>
+                                <option>Khoa Ngôn ngữ và Văn hóa Đức</option>
+                                <option>Khoa Ngôn ngữ và Văn hóa Hàn</option>
+                                <option>Khoa Ngôn ngữ và Văn hóa Ả Rập</option>
+                                <option>Khoa Ngôn ngữ và Văn hóa Nga</option>
+                                <option>Khoa Ngôn ngữ và Văn hóa Việt Nam - Đông Nam Á</option>
+                                <option>Khoa Giáo dục quốc tế</option>
+                            </select>
                         </div>
-                    </div>
 
-                    <div class="input-group">
-                        <label for="a-email">Email</label>
-                        <input type="email" id="a-email" placeholder="example@ulis.vnu.edu.vn" required
-                            spellcheck="false">
-                    </div>
-
-                    <div class="input-group">
-                        <label for="a-dept">Chọn Khoa của bạn</label>
-                        <select id="a-dept" required>
-                            <option value="" disabled selected>Khoa của bạn...</option>
-                            <option>Khoa Ngôn ngữ và Văn hóa Anh</option>
-                            <option>Khoa Ngôn ngữ và Văn hóa Trung</option>
-                            <option>Khoa Ngôn ngữ và Văn hóa Nhật</option>
-                            <option>Khoa Ngôn ngữ và Văn hóa Pháp</option>
-                            <option>Khoa Ngôn ngữ và Văn hóa Đức</option>
-                            <option>Khoa Ngôn ngữ và Văn hóa Hàn</option>
-                            <option>Khoa Ngôn ngữ và Văn hóa Ả Rập</option>
-                            <option>Khoa Ngôn ngữ và Văn hóa Nga</option>
-                            <option>Khoa Ngôn ngữ và Văn hóa Việt Nam - Đông Nam Á</option>
-                            <option>Khoa Giáo dục quốc tế</option>
-                        </select>
-                    </div>
-
-                    <div class="multi-select-container">
-                        <label class="section-label">Môn học bạn đang quan tâm (Chọn nhiều)</label>
-                        <div class="tag-scroll-area">
-                            <div class="tag-cloud" id="tagCloudSubjects"></div>
+                        <div class="multi-select-container">
+                            <label class="section-label">Môn học bạn đang quan tâm (Chọn nhiều)</label>
+                            <div class="tag-scroll-area">
+                                <div class="tag-cloud" id="tagCloudSubjects"></div>
+                            </div>
                         </div>
-                    </div>
-                    <button type="submit" class="btn btn-modal-submit magnetic-btn">Gửi Đăng Ký Tư Vấn</button>
-                </form>
-            </div>
-            <div id="modalSuccessBody" class="modal-success">
-                <div class="success-icon">✓</div>
-                <h2>Gửi thành công!</h2>
-                <p>Cảm ơn bạn đã tin tưởng ULIS Compass. Chúng mình sẽ liên hệ với bạn trong vòng 24h tới.</p>
-                <button class="btn btn-outline" onclick="closeModal()">Đóng</button>
+                        <button type="submit" class="btn btn-registration-submit magnetic-btn">Gửi Đăng Ký Tư
+                            Vấn</button>
+                    </form>
+                </div>
+                <div id="regSuccessBody" class="registration-success">
+                    <div class="success-icon">✓</div>
+                    <h2>Gửi thành công!</h2>
+                    <p>Cảm ơn bạn đã tin tưởng ULIS Compass. Chúng mình sẽ liên hệ với bạn trong vòng 24h tới.</p>
+                    <button class="btn btn-outline" style="margin-top: 1.5rem;" onclick="location.reload()">Quay lại</button>
+                </div>
             </div>
         </div>
-    </div>
+    </section>
 
     <!-- ── SECTION: SỰ KIỆN NỔI BẬT ── -->
     <section id="event" class="section">
@@ -494,10 +497,10 @@
             </div>
             <div class="footer-links">
                 <h4>Thông tin liên lạc</h4>
-                <p>📧 Email: mchau95049@gmail.com</p>
-                <p>📞 Telephone: 0827124999</p>
-                <p>📍 Địa chỉ: Số 2, Phạm Văn Đồng, Cầu Giấy, Hà Nội</p>
-                <p>⏰ Hotline hỗ trợ: 8:00 - 17:00 (T2 - T6)</p>
+                <p><i class="fa-regular fa-envelope"></i> Email: mchau95049@gmail.com</p>
+                <p><i class="fas fa-phone-alt"></i> Telephone: 0827124999</p>
+                <p><i class="fas fa-map-marker-alt"></i> Địa chỉ: Số 2, Phạm Văn Đồng, Cầu Giấy, Hà Nội</p>
+                <p><i class="far fa-clock"></i> Hotline hỗ trợ: 8:00 - 17:00 (T2 - T6)</p>
             </div>
         </div>
         <div class="footer-bottom">
