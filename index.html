@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ULIS Elective Compass | Nền tảng tra cứu môn học</title>
+    <meta name="description"
+        content="Nền tảng tra cứu và đánh giá môn học tự chọn dành riêng cho sinh viên Trường Đại học Ngoại ngữ- ĐHQGHN.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Be+Vietnam+Pro:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <meta name="theme-color" content="#fdfaf6">
+</head>
+
+<body>
+    <div class="cursor-dot"></div>
+
+    <!-- ── NAVBAR ── -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <img class="logo-img" src="logonhom.jpg" alt="ULIS Logo">
+                ULIS
+            </a>
+            <ul class="nav-links">
+                <div class="nav-mobile-header mobile-only">
+                    <span class="nav-mobile-logo">ULIS</span>
+                    <button class="close-menu" aria-label="Close Menu">&times;</button>
+                </div>
+                <li><a href="#home"><i class="fas fa-home"></i> Trang Chủ</a></li>
+                <li><a href="#why"><i class="fas fa-star"></i> Why Choose Us?</a></li>
+                <li><a href="#database"><i class="fas fa-book"></i> Kho Môn Học</a></li>
+                <li><a href="#event"><i class="fas fa-fire"></i> Hot Event</a></li>
+                <li><a href="#feedback"><i class="fas fa-comments"></i> Chia sẻ</a></li>
+                <li class="nav-cta-item"><a href="javascript:void(0)" onclick="openModal()" class="nav-cta-desktop">Tư
+                        Vấn</a></li>
+            </ul>
+
+            <button class="menu-toggle" aria-label="Open Menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+    </nav>
+
+    <header id="home" class="hero section-reveal">
+        <div class="container hero-centered-content">
+            <div class="hero-brand-logo fade-up">
+                <img src="logonhomkhongnen.png" alt="ULIS Big Logo" class="hero-top-logo">
+            </div>
+            <div class="hero-top-info fade-up">
+                <p class="university-name">ĐẠI HỌC NGOẠI NGỮ - ĐẠI HỌC QUỐC GIA HÀ NỘI</p>
+            </div>
+
+            <div class="hero-main-title fade-up delay-1">
+                <h1>ULIS ELECTIVE COMPASS</h1>
+            </div>
+
+            <div class="hero-sub-box fade-up delay-2">
+                <p class="hero-subheadline hero-subheadline-top">
+                    Học điều bạn mạnh, chọn môn bạn mê.
+                </p>
+                <p class="hero-subheadline">
+                    Nền tảng tra cứu và đánh giá môn học tự chọn dành riêng cho sinh viên ULIS.
+                    Cung cấp thông tin chính thống và trải nghiệm thực tế từ cộng đồng.
+                </p>
+                <div class="hero-btns">
+                    <a href="#database" class="btn btn-primary-rounded magnetic-btn">
+                        <span class="btn-icon">🔍</span> Tìm kiếm môn học
+                    </a>
+                    <a href="#why-video" class="btn btn-white-rounded magnetic-btn">
+                        <span class="btn-icon">🎬</span> Xem video giới thiệu
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ── SECTION: WHY CHOOSE US ── -->
+    <section id="why" class="section">
+        <div class="container section-reveal">
+            <div class="section-title fade-up">
+                <h2>Why Choose Us</h2>
+                <p>Giải pháp tối ưu giúp bạn chọn đúng môn học, đúng định hướng.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card reveal reveal-left">
+                    <div class="feature-icon">📊</div>
+                    <h3>Dữ liệu tập trung</h3>
+                    <p>Giải quyết tình trạng thông tin phân tán, giúp bạn tra cứu mọi thứ tại một nơi duy nhất.</p>
+                </div>
+                <div class="feature-card reveal reveal-zoom delay-1">
+                    <div class="feature-icon">✨</div>
+                    <h3>Cá nhân hóa</h3>
+                    <p>Gợi ý môn học dựa trên thế mạnh và định hướng nghề nghiệp của từng sinh viên.</p>
+                </div>
+                <div class="feature-card reveal reveal-right delay-2">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>Giảm thiểu rủi ro</h3>
+                    <p>Hạn chế tối đa tỷ lệ chọn nhầm môn không phù hợp, tiết kiệm thời gian và học phí.</p>
+                </div>
+                <div class="feature-card fade-up">
+                    <div class="feature-icon">💬</div>
+                    <h3>Review đa chiều</h3>
+                    <p>Chia sẻ kinh nghiệm thực tế, chân thực từ các sinh viên khóa trước đã trải nghiệm.</p>
+                </div>
+            </div>
+
+            <!-- Video minh họa -->
+            <div id="why-video" class="video-container fade-up delay-1">
+                <div class="video-placeholder">
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80"
+                        loading="lazy" crossorigin="anonymous" alt="Video minh họa">
+                    <button class="play-btn">▶</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── SECTION: KHO DỮ LIỆU MÔN HỌC ── -->
+    <section id="database" class="section bg-light">
+        <div class="container section-reveal">
+            <div class="section-title fade-up">
+                <h2>Kho Dữ Liệu Môn Học</h2>
+                <p>Tra cứu nhanh thông tin và đánh giá các môn học tự chọn.</p>
+            </div>
+
+            <div class="search-wrapper fade-up">
+                <div class="search-bar">
+                    <span class="search-icon">🔍</span>
+                    <input type="text" id="subjectSearch"
+                        placeholder="Nhập tên môn hoặc mã môn học (ví dụ: FLF1010)...">
+                </div>
+            </div>
+
+            <div class="reviews-container" id="reviewsContainer">
+                <!-- Reviews have been moved here. Since original content was lost, they are generated dynamically or need to be re-added -->
+            </div>
+
+            <div class="subject-blocks-grid">
+                <!-- Khối II.2 -->
+                <div class="subject-block fade-up">
+                    <h3>Khối II.2</h3>
+                    <ul class="subject-list" id="list-ii2">
+                        <li data-id="FLF1010">
+                            <div class="subject-info"><span>✔</span> Trí tuệ cảm xúc và giao tiếp xã hội (FLF1010)</div>
+                            <div class="inline-review"></div>
+                        </li>
+                        <li data-id="FLF1007">
+                            <div class="subject-info"><span>✔</span> Công nghệ thông tin & truyền thông (FLF1007)</div>
+                            <div class="inline-review"></div>
+                        </li>
+                        <li data-id="FLF1009">
+                            <div class="subject-info"><span>✔</span> Tư duy sáng tạo và khởi nghiệp (FLF1009)</div>
+                            <div class="inline-review"></div>
+                        </li>
+                        <li data-id="FLF1016">
+                            <div class="subject-info"><span>✔</span> Địa chính trị (FLF1016)</div>
+                            <div class="inline-review"></div>
+                        </li>
+                        <li data-id="GEO101">
+                            <div class="subject-info"><span>✔</span> Địa lý đại cương</div>
+                            <div class="inline-review"></div>
+                        </li>
+                        <li data-id="ENV101">
+                            <div class="subject-info"><span>✔</span> Môi trường và phát triển</div>
+                            <div class="inline-review"></div>
+                        </li>
+                        <li data-id="FLF1006">
+                            <div class="subject-info"><span>✔</span> Tìm hiểu cộng đồng Châu Âu (FLF1006)</div>
+                            <div class="inline-review"></div>
+                        </li>
+                        <li data-id="FLF1005">
+                            <div class="subject-info"><span>✔</span> Tìm hiểu cộng đồng Châu Á (FLF1005)</div>
+                            <div class="inline-review"></div>
+                        </li>
+                        <li data-id="FLF1015">
+                            <div class="subject-info"><span>✔</span> Học tập cùng cộng đồng (FLF1015)</div>
+                            <div class="inline-review"></div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Khối III.2 -->
+                <div class="subject-block fade-up delay-1">
+                    <h3>Khối III.2</h3>
+                    <ul class="subject-list" id="list-iii2">
+                        <li data-id="FLF1059">
+                            <div class="subject-info"><span>✔</span> Thống kê và phân tích dữ liệu trong NCKH (FLF1059)
+                            </div>
+                            <div class="inline-review"></div>
+                        </li>
+                        <li data-id="VLF1053">
+                            <div class="subject-info"><span>✔</span> Tiếng Việt thực hành (VLF1053)</div>
+                            <div class="inline-review"></div>
+                        </li>
+                        <li data-id="FLF1002">
+                            <div class="subject-info"><span>✔</span> Phương pháp luận nghiên cứu khoa học (FLF1002)
+                            </div>
+                            <div class="inline-review"></div>
+                        </li>
+                        <li data-id="PHI1051">
+                            <div class="subject-info"><span>✔</span> Logic học đại cương (PHI1051)</div>
+                            <div class="inline-review"></div>
+                        </li>
+                        <li data-id="PSF1050">
+                            <div class="subject-info"><span>✔</span> Tâm lý học đại cương (PSF1050)</div>
+                            <div class="inline-review"></div>
+                        </li>
+                        <li data-id="FLF1056">
+                            <div class="subject-info"><span>✔</span> Tư duy phê phán (FLF1056)</div>
+                            <div class="inline-review"></div>
+                        </li>
+                        <li data-id="FLF1050">
+                            <div class="subject-info"><span>✔</span> Cảm thụ nghệ thuật (FLF1050)</div>
+                            <div class="inline-review"></div>
+                        </li>
+                        <li data-id="HIS1053">
+                            <div class="subject-info"><span>✔</span> Lịch sử văn minh thế giới (HIS1053)</div>
+                            <div class="inline-review"></div>
+                        </li>
+                        <li data-id="FLF1057">
+                            <div class="subject-info"><span>✔</span> Văn hóa các nước ASEAN (FLF1057)</div>
+                            <div class="inline-review"></div>
+                        </li>
+                        <li data-id="FLF1052">
+                            <div class="subject-info"><span>✔</span> Tư duy hình ảnh (FLF1052)</div>
+                            <div class="inline-review"></div>
+                        </li>
+                        <li data-id="FLF1053">
+                            <div class="subject-info"><span>✔</span> Thiết kế cuộc đời (FLF1053)</div>
+                            <div class="inline-review"></div>
+                        </li>
+                        <li data-id="FLF1054">
+                            <div class="subject-info"><span>✔</span> Thư pháp (FLF1054)</div>
+                            <div class="inline-review"></div>
+                        </li>
+                        <li data-id="FLF1055">
+                            <div class="subject-info"><span>✔</span> Cổ học tinh hoa (FLF1055)</div>
+                            <div class="inline-review"></div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ── MODAL ĐĂNG KÝ ── -->
+    <div class="modal-overlay" id="registerModal">
+        <div class="modal-content">
+            <button class="btn-close-modal" onclick="closeModal()">&times;</button>
+            <div id="modalFormBody">
+                <h2>Đăng ký Tư vấn</h2>
+                <p>Để lại thông tin để được hỗ trợ lộ trình học tập tối ưu nhất và nhận file đề cương ngắn gọn các môn
+                    học tự chọn trong học kỳ này.</p>
+                <form id="advisorForm" class="modal-form">
+                    <div class="form-row">
+                        <div class="input-group">
+                            <label for="a-name">Họ và tên</label>
+                            <input type="text" id="a-name" placeholder="VD: Nguyễn Văn A" required spellcheck="false">
+                        </div>
+                        <div class="input-group">
+                            <label for="a-phone">Số điện thoại</label>
+                            <input type="tel" id="a-phone" placeholder="VD: 0912 xxx xxx" required spellcheck="false">
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="a-email">Email</label>
+                        <input type="email" id="a-email" placeholder="example@ulis.vnu.edu.vn" required
+                            spellcheck="false">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="a-dept">Chọn Khoa của bạn</label>
+                        <select id="a-dept" required>
+                            <option value="" disabled selected>Khoa của bạn...</option>
+                            <option>Khoa Ngôn ngữ và Văn hóa Anh</option>
+                            <option>Khoa Ngôn ngữ và Văn hóa Trung</option>
+                            <option>Khoa Ngôn ngữ và Văn hóa Nhật</option>
+                            <option>Khoa Ngôn ngữ và Văn hóa Pháp</option>
+                            <option>Khoa Ngôn ngữ và Văn hóa Đức</option>
+                            <option>Khoa Ngôn ngữ và Văn hóa Hàn</option>
+                            <option>Khoa Ngôn ngữ và Văn hóa Ả Rập</option>
+                            <option>Khoa Ngôn ngữ và Văn hóa Nga</option>
+                            <option>Khoa Ngôn ngữ và Văn hóa Việt Nam - Đông Nam Á</option>
+                            <option>Khoa Giáo dục quốc tế</option>
+                        </select>
+                    </div>
+
+                    <div class="multi-select-container">
+                        <label class="section-label">Môn học bạn đang quan tâm (Chọn nhiều)</label>
+                        <div class="tag-scroll-area">
+                            <div class="tag-cloud" id="tagCloudSubjects"></div>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-modal-submit magnetic-btn">Gửi Đăng Ký Tư Vấn</button>
+                </form>
+            </div>
+            <div id="modalSuccessBody" class="modal-success">
+                <div class="success-icon">✓</div>
+                <h2>Gửi thành công!</h2>
+                <p>Cảm ơn bạn đã tin tưởng ULIS Compass. Chúng mình sẽ liên hệ với bạn trong vòng 24h tới.</p>
+                <button class="btn btn-outline" onclick="closeModal()">Đóng</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ── SECTION: SỰ KIỆN NỔI BẬT ── -->
+    <section id="event" class="section">
+        <div class="container section-reveal">
+            <div class="event-box reveal reveal-zoom">
+                <div class="event-badge">HOT EVENT <span class="dot"></span></div>
+                <div class="event-content">
+                    <div class="event-header-container">
+                        <h2 class="event-title-main">
+                            Tuần Lễ Tài Liệu Vàng
+                            <span>Upload càng nhiều, quyền lợi càng cao - Tích điểm, thăng hạng ngay!</span>
+                        </h2>
+                        <p class="event-subtitle">
+                            Chia sẻ slide bài giảng, đề thi, ghi chú cá nhân. <br>
+                            Đóng góp để tích lũy điểm thưởng và nâng cấp hạng thành viên.
+                        </p>
+                    </div>
+
+                    <div class="event-card event-card-list">
+                        <h3 class="event-card-title">Trong thời gian sự kiện, bạn có thể</h3>
+                        <ul class="event-bullets">
+                            <li>Upload slide bài giảng</li>
+                            <li>Chia sẻ đề thi, đề cương</li>
+                            <li>Đăng tải note cá nhân, cheat sheet</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="event-right-panel">
+                    <div class="event-visual reveal reveal-right">
+                        <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=800&q=80"
+                            loading="lazy" crossorigin="anonymous" alt="Sự kiện chia sẻ tài liệu">
+                    </div>
+                    <div class="event-card event-card-points">
+                        <h3 class="event-card-title">Cơ chế tính điểm</h3>
+                        <ul class="event-points">
+                            <li>Upload càng nhiều → điểm càng cao</li>
+                            <li>Tài liệu chất lượng → được cộng thêm điểm</li>
+                            <li>Tương tác tốt → bonus điểm</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Highlight block moved to span full width at the bottom -->
+                <div class="event-card event-card-highlight">
+                    <p><strong>Điểm đặc biệt:</strong> “Tài liệu hot nhất tuần” được vinh danh, cơ hội để bạn trở
+                        thành <em>người cứu GPA</em>.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── SECTION: TESTIMONIALS ── -->
+    <section class="section bg-light">
+        <div class="container section-reveal">
+            <div class="section-title fade-up">
+                <h2>Sinh viên nói gì?</h2>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testi-card fade-up">
+                    <div class="testi-user">
+                        <img src="anh1.jpg" alt="User">
+                        <div>
+                            <h4>Vũ Thảo Vy</h4>
+                            <span>Khoa NN&VH Anh</span>
+                        </div>
+                    </div>
+                    <p>"Trước mình toàn phải vào mấy group hỏi rồi lướt comment khá mệt. Trang này gom lại một chỗ nên
+                        đỡ mất thời gian hẳn."</p>
+                </div>
+                <div class="testi-card fade-up delay-1">
+                    <div class="testi-user">
+                        <img src="anh2.jpg" alt="User">
+                        <div>
+                            <h4>Trịnh Hoài Thương</h4>
+                            <span>Khoa NN&VH Nhật</span>
+                        </div>
+                    </div>
+                    <p>"Mình thử chọn môn theo mấy review trên web, thấy cũng khá sát. Ít nhất là biết trước môn nào
+                        nặng nhẹ thế nào."</p>
+                </div>
+                <div class="testi-card fade-up delay-2">
+                    <div class="testi-user">
+                        <img src="anh3.jpg" alt="User">
+                        <div>
+                            <h4>Nguyễn Thu Hà</h4>
+                            <span>Khoa NN&VH Trung</span>
+                        </div>
+                    </div>
+                    <p>"Nhờ đọc review trước nên mình né được một môn khá khó. Không dám nói là chọn chuẩn 100% nhưng đỡ
+                        ‘chọn bừa’."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── SECTION: CHIA SẺ TRẢI NGHIỆM ── -->
+    <section id="feedback" class="section">
+        <div class="container section-reveal">
+            <div class="contact-wrapper fade-up">
+                <div class="contact-info">
+                    <h2>Chia sẻ trải nghiệm của bạn</h2>
+                    <p>Góp ý của bạn sẽ giúp cộng đồng sinh viên ULIS có cái nhìn khách quan hơn về các môn học. Hãy
+                        tham khảo ý kiến các bạn khác phía trên rồi đưa ra đánh giá của riêng mình nhé!</p>
+                    <div class="rating-input">
+                        <p>Xếp hạng môn học:</p>
+                        <div class="stars" id="starRating">
+                            <span data-val="1"><svg viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                                </svg></span>
+                            <span data-val="2"><svg viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                                </svg></span>
+                            <span data-val="3"><svg viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                                </svg></span>
+                            <span data-val="4"><svg viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                                </svg></span>
+                            <span data-val="5"><svg viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                                </svg></span>
+                        </div>
+                        <p id="ratingLabel" class="rating-label">Chọn mức độ hài lòng của bạn</p>
+                    </div>
+                </div>
+                <div class="contact-form-container">
+                    <form id="experienceForm" class="contact-form">
+                        <div class="form-row">
+                            <div class="input-group">
+                                <label for="e-name">Họ và tên</label>
+                                <input type="text" id="e-name" placeholder="Nhập tên của bạn..." required
+                                    spellcheck="false">
+                            </div>
+                            <div class="input-group">
+                                <label for="e-dept">Chọn Khoa</label>
+                                <select id="e-dept" required>
+                                    <option value="" disabled selected>Chọn Khoa của bạn...</option>
+                                    <option>Khoa Ngôn ngữ và Văn hóa Anh</option>
+                                    <option>Khoa Ngôn ngữ và Văn hóa Trung</option>
+                                    <option>Khoa Ngôn ngữ và Văn hóa Nhật</option>
+                                    <option>Khoa Ngôn ngữ và Văn hóa Pháp</option>
+                                    <option>Khoa Ngôn ngữ và Văn hóa Đức</option>
+                                    <option>Khoa Ngôn ngữ và Văn hóa Hàn</option>
+                                    <option>Khoa Ngôn ngữ và Văn hóa Ả Rập</option>
+                                    <option>Khoa Ngôn ngữ và Văn hóa Nga</option>
+                                    <option>Khoa Ngôn ngữ và Văn hóa Việt Nam - Đông Nam Á</option>
+                                    <option>Khoa Giáo dục quốc tế</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label for="e-lecturer">Giảng viên bộ môn (Nếu có)</label>
+                            <input type="text" id="e-lecturer" placeholder="VD: Thầy Nguyễn Văn B" spellcheck="false">
+                        </div>
+                        <div class="input-group">
+                            <label for="e-comment">Chia sẻ chi tiết trải nghiệm của bạn...</label>
+                            <textarea id="e-comment" rows="3"
+                                placeholder="Chia sẻ cảm nhận của bạn về môn học, cách giảng dạy, bài tập..." required
+                                spellcheck="false"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-submit-form magnetic-btn">Gửi Đánh Giá Ngay</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── FOOTER ── -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-logo-box">
+                <img src="logonhomkhongnen.png" alt="ULIS Logo" class="footer-logo">
+                <p>Cổng thông tin chính thức về môn học tự chọn tại Trường Đại học Ngoại ngữ - ĐHQGHN.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Thông tin liên lạc</h4>
+                <p>📧 Email: mchau95049@gmail.com</p>
+                <p>📞 Telephone: 0827124999</p>
+                <p>📍 Địa chỉ: Số 2, Phạm Văn Đồng, Cầu Giấy, Hà Nội</p>
+                <p>⏰ Hotline hỗ trợ: 8:00 - 17:00 (T2 - T6)</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 ULIS Elective Compass. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <button id="backToTop" class="back-to-top">↑</button>
+
+    <script src="script.js" defer></script>
+</body>
+
+</html>
