@@ -201,7 +201,120 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // ── REVIEWS ──
+    // ── REVIEWS DATA ──
+    const subjectData = {
+        "FLF1010": {
+            desc: "Trang bị kiến thức về nhận thức bản thân, điều tiết cảm xúc và kỹ năng giao tiếp hiệu quả trong các mối quan hệ.",
+            review: "Môn học cực chill, giúp bạn hiểu mình và người khác hơn qua các bài tập tình huống thực tế trên lớp.",
+            rating: "4.9"
+        },
+        "FLF1007": {
+            desc: "Trang bị kỹ năng sử dụng công cụ số và sản xuất nội dung truyền thông đa phương tiện như video, đồ họa và landing page.",
+            review: "Môn học cực vui, bài tập thực hành nhiều giúp làm chủ các công cụ sáng tạo hiện đại mà không bị áp lực lý thuyết.",
+            rating: "4.8"
+        },
+        "FLF1009": {
+            desc: "Phát triển khả năng tư duy đột phá và trang bị các bước cơ bản để xây dựng một dự án khởi nghiệp thực tế.",
+            review: "Môn này kích thích óc sáng tạo cực tốt, làm việc nhóm nhiều nên rất vui và gắn kết các thành viên.",
+            rating: "4.8"
+        },
+        "FLF1016": {
+            desc: "Phân tích mối quan hệ giữa các yếu tố địa lý và quyền lực chính trị, quân sự trong các khu vực trên thế giới.",
+            review: "Môn học mang lại tầm nhìn vĩ mô và hiểu biết sâu sắc về các vấn đề thời sự, quốc tế đang diễn ra.",
+            rating: "4.5"
+        },
+        "GEO101": {
+            desc: "Nghiên cứu các quy luật tự nhiên và kinh tế - xã hội, được lồng ghép các kiến thức đặc thù phù hợp với khu vực ngôn ngữ của từng khoa.",
+            review: "Kiến thức thực tế, giúp hiểu rõ mối quan hệ giữa địa lý và văn hóa của quốc gia mình đang theo học. Đề thi bám sát nội dung trên lớp.",
+            rating: "4.3"
+        },
+        "ENV101": {
+            desc: "Tìm hiểu về các vấn đề môi trường toàn cầu và các chính sách phát triển bền vững của các quốc gia thuộc khối ngôn ngữ chuyên ngành.",
+            review: "Môn học mang tính thời sự cao, giúp mở rộng vốn từ vựng chuyên ngành về môi trường và có cái nhìn đa chiều về phát triển bền vững.",
+            rating: "4.6"
+        },
+        "FLF1006": {
+            desc: "Khám phá lịch sử hình thành, văn hóa đặc trưng và các thể chế kinh tế - chính trị của khối Liên minh Châu Âu.",
+            review: "Nội dung thú vị, giúp bạn hiểu sâu về lối sống và tư duy của người châu Âu qua các thời kỳ.",
+            rating: "4.7"
+        },
+        "FLF1005": {
+            desc: "Nghiên cứu về sự đa dạng văn hóa, lịch sử và xu hướng phát triển kinh tế của các quốc gia trong khu vực Châu Á.",
+            review: "Môn học gần gũi, giúp khám phá những nét đẹp văn hóa độc đáo và mối quan hệ giữa các nước láng giềng.",
+            rating: "4.7"
+        },
+        "FLF1015": {
+            desc: "Kết hợp học lý thuyết với các hoạt động thiện nguyện và phục vụ cộng đồng thực tế.",
+            review: "Trải nghiệm cực kỳ ý nghĩa! Vừa được đi thực tế, vừa được giúp đỡ mọi người mà vẫn được tính tín chỉ.",
+            rating: "5.0"
+        },
+        "FLF1059": {
+            desc: "Làm quen với các con số, biểu đồ và cách xử lý số liệu bằng phần mềm chuyên dụng.",
+            review: "Phù hợp cho những bạn thích nghiên cứu. Ban đầu nhìn số liệu hơi sợ nhưng giáo trình rất chi tiết, dễ theo dõi.",
+            rating: "4.2"
+        },
+        "VLF1053": {
+            desc: "Rèn luyện kỹ năng sử dụng tiếng Việt chuẩn xác trong soạn thảo văn bản, giao tiếp và thuyết trình chuyên nghiệp.",
+            review: "Môn học rất thực dụng, giúp chỉnh sửa những lỗi diễn đạt cơ bản và nâng cao kỹ năng viết tiểu luận cực hiệu quả.",
+            rating: "4.9"
+        },
+        "FLF1002": {
+            desc: "Trang bị tư duy nghiên cứu bài bản, cách đặt vấn đề và trích dẫn tài liệu chuẩn.",
+            review: "Nền tảng quan trọng cho bạn nào định làm khóa luận. Môn học khá khó, cần đầu tư nhiều thời gian, công sức nhưng cực kỳ cần thiết cho tương lai.",
+            rating: "4.0"
+        },
+        "PHI1051": {
+            desc: "Rèn luyện khả năng suy luận chính xác và phát hiện các lỗi lập luận sai lầm.",
+            review: "Môn này hơi 'hack não' một chút nhưng học xong thấy mình thông minh hẳn ra. Thầy cô dạy rất logic, dễ hiểu.",
+            rating: "4.5"
+        },
+        "PSF1050": {
+            desc: "Khám phá các quy luật tâm lý cơ bản của con người từ nhận thức, cảm xúc đến hành vi và nhân cách.",
+            review: "Kiến thức cực kỳ thú vị, giúp bạn giải mã được nhiều hành vi của bản thân và những người xung quanh trong cuộc sống.",
+            rating: "4.8"
+        },
+        "FLF1056": {
+            desc: "Giúp sinh viên rèn luyện khả năng phân tích, đánh giá các lập luận một cách khách quan và đa chiều.",
+            review: "Môn này cực kỳ hữu ích cho việc viết tiểu luận. Thầy cô dạy rất hay, kích thích tư duy phản biện tốt.",
+            rating: "4.7"
+        },
+        "FLF1050": {
+            desc: "Khám phá vẻ đẹp của âm nhạc, hội họa và các hình thức nghệ thuật khác để nuôi dưỡng tâm hồn.",
+            review: "Học nhẹ nhàng, chill lắm. Những bạn thích nghệ thuật hoặc muốn tìm cảm hứng mới thì nên chọn môn này.",
+            rating: "4.9"
+        },
+        "HIS1053": {
+            desc: "Tổng hợp các giai đoạn phát triển rực rỡ nhất của nhân loại từ các nền văn minh cổ đại đến hiện đại.",
+            review: "Như một chuyến du hành thời gian, môn này giúp mở mang kiến thức văn hóa đồ sộ và hiểu rõ nguồn gốc các giá trị nhân văn.",
+            rating: "4.6"
+        },
+        "FLF1057": {
+            desc: "Tìm hiểu về phong tục, tập quán và bản sắc văn hóa đặc trưng của các quốc gia trong khu vực Đông Nam Á.",
+            review: "Kiến thức thực tế, thú vị. Bài tập nhóm thường là về du lịch hoặc ẩm thực nên làm rất vui.",
+            rating: "4.6"
+        },
+        "FLF1052": {
+            desc: "Phát triển khả năng quan sát, phân tích và diễn đạt ý tưởng thông qua ngôn ngữ hình ảnh và thị giác.",
+            review: "Môn học đầy cảm hứng, rất phù hợp cho những bạn yêu thích sáng tạo và muốn cải thiện khả năng trình bày trực quan.",
+            rating: "4.9"
+        },
+        "FLF1053": {
+            desc: "Ứng dụng tư duy thiết kế để định hướng bản thân, xây dựng mục tiêu và lộ trình phát triển sự nghiệp hạnh phúc.",
+            review: "Một môn học mang tính định hướng cao, giúp bạn bớt mông lung và biết cách tự tạo ra lộ trình tương lai cho riêng mình.",
+            rating: "5.0"
+        },
+        "FLF1054": {
+            desc: "Làm quen với nghệ thuật viết chữ, rèn luyện sự kiên nhẫn và tìm hiểu nét đẹp văn hóa qua từng nét bút.",
+            review: "Môn học giúp rèn tính tĩnh tâm rất tốt, không khí lớp học nhẹ nhàng và mang lại những trải nghiệm nghệ thuật độc đáo.",
+            rating: "4.7"
+        },
+        "FLF1055": {
+            desc: "Trích dẫn và phân tích những bài học đạo đức, triết lý nhân sinh sâu sắc từ các điển tích và tác phẩm kinh điển xưa.",
+            review: "Những câu chuyện ngắn gọn nhưng chứa đựng bài học quý giá, giúp bạn trau dồi vốn sống và cách đối nhân xử thế.",
+            rating: "4.7"
+        }
+    };
+
     const reviewsContainer = document.getElementById('reviewsContainer');
     const allSubjectItems = document.querySelectorAll('.subject-list li');
 
@@ -210,24 +323,24 @@ document.addEventListener('DOMContentLoaded', () => {
         allSubjectItems.forEach(item => {
             const subjectId = item.dataset.id;
             const infoEl = item.querySelector('.subject-info');
-            if (!infoEl) return;
+            if (!infoEl || !subjectData[subjectId]) return;
+
             const fullText = infoEl.textContent.replace('✔', '').trim();
+            const data = subjectData[subjectId];
+
             const card = document.createElement('div');
             card.className = 'review-card fade-up';
             card.dataset.subject = subjectId;
             card.style.display = 'none'; // Hidden by default
 
-            // Random rating for demo
-            const rating = (4.0 + Math.random()).toFixed(1);
-
             card.innerHTML = `
                 <div class="review-header">
                     <h4>${fullText}</h4>
-                    <span class="rating-badge">⭐ ${rating}/5.0</span>
+                    <span class="rating-badge">⭐ ${data.rating}/5.0</span>
                 </div>
                 <div class="review-content">
-                    <p class="subject-desc"><strong>Mô tả:</strong> Cung cấp kiến thức và kỹ năng thực tế về môn học ${fullText}.</p>
-                    <blockquote class="student-quote">"Môn học rất thú vị, bổ ích và mang tính ứng dụng cao trong thực tế!"</blockquote>
+                    <p class="subject-desc"><strong>Mô tả:</strong> ${data.desc}</p>
+                    <blockquote class="student-quote">"${data.review}"</blockquote>
                 </div>
             `;
             reviewsContainer.appendChild(card);
@@ -270,21 +383,18 @@ document.addEventListener('DOMContentLoaded', () => {
     // ── SUBJECT EXPANSION ──
     subjectItems.forEach(item => {
         item.addEventListener('click', () => {
-            // Close other items if desired (optional)
-            // subjectItems.forEach(i => { if(i !== item) i.classList.remove('expanded'); });
-
             item.classList.toggle('expanded');
 
-            // Re-trigger reveal on child elements if needed
             const review = item.querySelector('.inline-review');
-            if (review && item.classList.contains('expanded')) {
-                // Add some content if empty (random review)
+            const subjectId = item.dataset.id;
+            const data = subjectData[subjectId];
+
+            if (review && item.classList.contains('expanded') && data) {
                 if (!review.innerHTML) {
-                    const rating = (4.0 + Math.random()).toFixed(1);
                     review.innerHTML = `
-                        <div class="rating-badge">⭐ ${rating}/5.0</div>
-                        <p>Học phần này mang lại nhiều kiến thức thực tế và rèn luyện kỹ năng tư duy phản biện tốt.</p>
-                        <blockquote>"Một trong những môn tự chọn đáng học nhất tại ULIS!"</blockquote>
+                        <div class="rating-badge">⭐ ${data.rating}/5.0</div>
+                        <p><strong>Mô tả:</strong> ${data.desc}</p>
+                        <blockquote>"${data.review}"</blockquote>
                     `;
                 }
             }
